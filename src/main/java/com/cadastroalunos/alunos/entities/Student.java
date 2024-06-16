@@ -11,20 +11,21 @@ public class Student implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID")
     private Long id;
 
-    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "AGE")
     private Integer age;
 
-    @Column(name = "EMAIL")
     private String email;
+
+    @ManyToOne
+    @JoinColumn(name = "sport_id")
+    private SportModal sportModal;
 
     public Student() {
     }
+
 
     public Student(Long id, String name, Integer age, String email) {
         this.id = id;

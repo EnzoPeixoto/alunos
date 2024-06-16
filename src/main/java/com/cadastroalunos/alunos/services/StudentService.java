@@ -11,14 +11,14 @@ import java.util.Optional;
 public class StudentService {
 
     @Autowired
-    private StudentRepository repository;
+    private StudentRepository studentRepository;
 
     public List<Student> findAll(){
-        return repository.findAll();
+        return studentRepository.findAll();
     }
 
     public Student findById(Long id){
-        Optional<Student> obj = repository.findById(id);
+        Optional<Student> obj = studentRepository.findById(id);
         return obj.get();
     }
 
