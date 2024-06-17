@@ -26,4 +26,7 @@ public class StudentService {
         return studentRepository.save(obj);
     }
 
+    public void delete (Long id){
+        studentRepository.deleteById(id);
+    }
 }

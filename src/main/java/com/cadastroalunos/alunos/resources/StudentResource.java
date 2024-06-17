@@ -15,19 +15,17 @@ import java.util.List;
 public class StudentResource {
 
     @Autowired
-    private StudentService service;
-    @Autowired
     private StudentService studentService;
 
     @GetMapping
     public ResponseEntity<List<Student>> findAll(){
-        List<Student> list = service.findAll();
+        List<Student> list = studentService.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Student> findById(@PathVariable Long id){
-        Student obj = service.findById(id);
+        Student obj = studentService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
 
@@ -36,5 +34,11 @@ public class StudentResource {
         obj = studentService.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).body(obj);
+    }
+
+    @DeleteMapping(value = "/{id}")
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        studentService.delete(id);
+        return ResponseEntity.noContent().build();
     }
 }

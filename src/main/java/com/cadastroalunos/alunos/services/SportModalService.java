@@ -27,4 +27,8 @@ public class SportModalService {
     public SportModal insert (SportModal obj){
         return sportModalRepository.save(obj);
     }
+
+    public void delete(Long id){
+        sportModalRepository.deleteById(id);
+    }
 }
