@@ -28,12 +28,12 @@ public class TestConfig implements CommandLineRunner {
         Student student1 = new Student(null, "Matheus Augusto", 12, "mariajose043@gmail.com");
         Student student2 = new Student(null, "Gabriela Augusto", 9, "mariajose043@gmail.com");
 
-        studentRepository.saveAll(Arrays.asList(student1, student2));
+        //studentRepository.saveAll(Arrays.asList(student1, student2));
 
         SportModal sp1 = new SportModal(null, "Futbol");
         SportModal sp2 = new SportModal(null, "Basketball");
 
-        sportModalRepository.saveAll(Arrays.asList(sp1, sp2));
+        //sportModalRepository.saveAll(Arrays.asList(sp1, sp2));
 
     }
 }

@@ -23,4 +23,8 @@ public class SportModalService {
         Optional<SportModal> obj = sportModalRepository.findById(id);
         return obj.get();
     }
+
+    public SportModal insert (SportModal obj){
+        return sportModalRepository.save(obj);
+    }
 }

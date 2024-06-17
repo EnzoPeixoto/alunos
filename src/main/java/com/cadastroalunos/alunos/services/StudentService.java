@@ -22,4 +22,8 @@ public class StudentService {
         return obj.get();
     }
 
+    public Student insert (Student obj){
+        return studentRepository.save(obj);
+    }
+
 }
