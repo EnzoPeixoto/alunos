@@ -23,15 +23,16 @@ public class Student implements Serializable {
     @JoinColumn(name = "sport_id")
     private SportModal sportModal;
 
+
     public Student() {
     }
 
-
-    public Student(Long id, String name, Integer age, String email) {
+    public Student(Long id, String name, Integer age, String email, SportModal sportModal) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.email = email;
+        this.sportModal = sportModal;
     }
 
     public Long getId() {

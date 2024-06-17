@@ -3,6 +3,7 @@ package com.cadastroalunos.alunos.entities;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -14,6 +15,7 @@ public class SportModal implements Serializable {
     private Long id;
 
     private String sport;
+
 
     public SportModal() {
     }
@@ -50,5 +52,10 @@ public class SportModal implements Serializable {
     @Override
     public int hashCode() {
         return Objects.hashCode(id);
+    }
+
+    @Override
+    public String toString() {
+        return id + " - " + sport;
     }
 }

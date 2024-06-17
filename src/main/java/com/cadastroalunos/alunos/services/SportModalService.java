@@ -40,4 +40,12 @@ public class SportModalService {
     public void updateData(SportModal entity, SportModal obj){
         entity.setSport(obj.getSport());
     }
+
+    public void printSports(){
+        Iterable<SportModal> sports = sportModalRepository.findAll();
+
+        for (SportModal sport : sports){
+            System.out.println(sport.toString());
+        }
+    }
 }
