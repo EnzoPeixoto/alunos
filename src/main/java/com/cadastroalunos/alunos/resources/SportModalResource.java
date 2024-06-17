@@ -42,4 +42,10 @@ public class SportModalResource {
         sportModalService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<SportModal> update(@PathVariable Long id, @RequestBody SportModal obj){
+        obj = sportModalService.update(id, obj);
+        return ResponseEntity.ok().body(obj);
+    }
 }

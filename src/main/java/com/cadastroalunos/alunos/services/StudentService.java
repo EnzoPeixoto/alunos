@@ -29,4 +29,16 @@ public class StudentService {
     public void delete (Long id){
         studentRepository.deleteById(id);
     }
+
+    public Student update(Long id, Student obj){
+        Student entity = studentRepository.getReferenceById(id);
+        updateData(entity, obj);
+        return studentRepository.save(entity);
+    }
+
+    public void updateData(Student entity, Student obj){
+        entity.setName(obj.getName());
+        entity.setAge(obj.getAge());
+        entity.setEmail(obj.getEmail());
+    }
 }
