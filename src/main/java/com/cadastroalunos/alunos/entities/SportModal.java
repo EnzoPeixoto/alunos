@@ -20,8 +20,12 @@ public class SportModal implements Serializable {
     public SportModal() {
     }
 
-    public SportModal(Long id, String sport) {
+     public SportModal(Long id, String sport) {
         this.id = id;
+        this.sport = sport;
+    }
+
+    public SportModal(String sport){
         this.sport = sport;
     }
 
@@ -54,8 +58,4 @@ public class SportModal implements Serializable {
         return Objects.hashCode(id);
     }
 
-    @Override
-    public String toString() {
-        return id + " - " + sport;
-    }
 }

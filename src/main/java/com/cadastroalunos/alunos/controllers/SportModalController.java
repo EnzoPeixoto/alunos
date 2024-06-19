@@ -1,7 +1,8 @@
-package com.cadastroalunos.alunos.resources;
+package com.cadastroalunos.alunos.controllers;
 
-import com.cadastroalunos.alunos.entities.Student;
-import com.cadastroalunos.alunos.services.StudentService;
+
+import com.cadastroalunos.alunos.entities.SportModal;
+import com.cadastroalunos.alunos.services.SportModalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,40 +12,39 @@ import java.net.URI;
 import java.util.List;
 
 @RestController
-@RequestMapping(value = "/students")
-public class StudentResource {
+@RequestMapping(value = "/sports")
+public class SportModalController {
 
     @Autowired
-    private StudentService studentService;
+    private SportModalService sportModalService;
 
     @GetMapping
-    public ResponseEntity<List<Student>> findAll(){
-        List<Student> list = studentService.findAll();
+    public ResponseEntity<List<SportModal>> findAll(){
+        List<SportModal> list = sportModalService.findAll();
         return ResponseEntity.ok().body(list);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Student> findById(@PathVariable Long id){
-        Student obj = studentService.findById(id);
+    public ResponseEntity<SportModal> findById(@PathVariable Long id){
+        SportModal obj = sportModalService.findById(id);
         return ResponseEntity.ok().body(obj);
     }
-
     @PostMapping
-    public ResponseEntity<Student> insert (@RequestBody Student obj){
-        obj = studentService.insert(obj);
+    public ResponseEntity<SportModal> insert (@RequestBody SportModal obj){
+        obj = sportModalService.insert(obj);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(obj.getId()).toUri();
         return ResponseEntity.created(uri).body(obj);
     }
 
     @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
-        studentService.delete(id);
+        sportModalService.delete(id);
         return ResponseEntity.noContent().build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Student> update(@PathVariable Long id, @RequestBody Student obj){
-        obj = studentService.update(id, obj);
+    public ResponseEntity<SportModal> update(@PathVariable Long id, @RequestBody SportModal obj){
+        obj = sportModalService.update(id, obj);
         return ResponseEntity.ok().body(obj);
     }
 }

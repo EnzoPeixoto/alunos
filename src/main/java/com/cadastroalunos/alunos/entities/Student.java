@@ -64,6 +64,14 @@ public class Student implements Serializable {
         this.email = email;
     }
 
+    public SportModal getSportModal() {
+        return sportModal;
+    }
+
+    public void setSportModal(SportModal sportModal) {
+        this.sportModal = sportModal;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
