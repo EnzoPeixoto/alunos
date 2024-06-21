@@ -28,13 +28,10 @@
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email">
     </div>
-    <div class="mb-3">
-        <label for="sportModal" class="form-label">Modalidade</label>
-        <select class="form-control" id="sportModal" name="sportModal">
-            <option>Escolha uma modalidade</option>
-            <option value="1">Futbol</option>
-            <option value="2">Basketball</option>
-            <option value="3">Volleyball</option>
+    <div>
+        <label for="sportList">Modalidade:</label>
+        <select id="sportList" name="sportModal">
+            <option th:each="sportModal : ${sportList}" th:value="${sportModal.id}" th:text="${sportModal.sportName}"></option>
         </select>
     </div>
     <button type="submit" class="btn btn-primary">Cadastrar</button>

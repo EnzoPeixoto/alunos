@@ -14,19 +14,19 @@ public class SportModal implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String sport;
+    private String sportName;
 
 
     public SportModal() {
     }
 
-     public SportModal(Long id, String sport) {
+     public SportModal(Long id, String sportName) {
         this.id = id;
-        this.sport = sport;
+        this.sportName = sportName;
     }
 
-    public SportModal(String sport){
-        this.sport = sport;
+    public SportModal(String sportName){
+        this.sportName = sportName;
     }
 
     public Long getId() {
@@ -37,12 +37,12 @@ public class SportModal implements Serializable {
         this.id = id;
     }
 
-    public String getSport() {
-        return sport;
+    public String getSportName() {
+        return sportName;
     }
 
-    public void setSport(String modal) {
-        this.sport = modal;
+    public void setSportName(String modal) {
+        this.sportName = modal;
     }
 
     @Override

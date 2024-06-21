@@ -38,7 +38,7 @@ public class SportModalService {
     }
 
     public void updateData(SportModal entity, SportModal obj){
-        entity.setSport(obj.getSport());
+        entity.setSportName(obj.getSportName());
     }
 
     public void printSports(){
