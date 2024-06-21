@@ -10,6 +10,7 @@
           rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
           crossorigin="anonymous">
 
+
     <link rel="stylesheet" href="/css/style.css">
 
     <title>Cadastro de alunos</title>
@@ -28,9 +29,9 @@
         <label for="email" class="form-label">Email</label>
         <input type="email" class="form-control" id="email" name="email">
     </div>
-    <div>
-        <label for="sportList">Modalidade:</label>
-        <select id="sportList" name="sportModal">
+    <div class="mb-3">
+        <label for="sportList" class="form-label">Modalidade:</label>
+        <select type="text" class="form-control" id="sportList" name="sportModal">
             <option th:each="sportModal : ${sportList}" th:value="${sportModal.id}" th:text="${sportModal.sportName}"></option>
         </select>
     </div>
